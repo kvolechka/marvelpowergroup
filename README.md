@@ -6,3 +6,5 @@
 - JS
 - GULP
 - JSON
+- SASS
+- БЭМ

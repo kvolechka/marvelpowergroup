@@ -86,6 +86,41 @@ h6 {
   font-weight: inherit;
 }
 
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local("Sofia Pro Extra Light"), local("Sofia-Pro-Extra-Light"), url("../fonts/SofiaProExtraLight.woff2") format("woff2"), url("../fonts/SofiaProExtraLight.woff") format("woff"), url("../fonts/SofiaProExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local("Sofia Pro Light"), local("Sofia-Pro-Light"), url("../fonts/SofiaProLight.woff2") format("woff2"), url("../fonts/SofiaProLight.woff") format("woff"), url("../fonts/SofiaProLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local("Sofia Pro Regular"), local("Sofia-Pro-Regular"), url("../fonts/SofiaProRegular.woff2") format("woff2"), url("../fonts/SofiaProRegular.woff") format("woff"), url("../fonts/SofiaProRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local("Sofia Pro Semi Bold"), local("Sofia-Pro-Semi-Bold"), url("../fonts/SofiaProSemiBold.woff2") format("woff2"), url("../fonts/SofiaProSemiBold.woff") format("woff"), url("../fonts/SofiaProSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local("Sofia Pro Bold"), local("Sofia-Pro-Bold"), url("../fonts/SofiaProBold.woff2") format("woff2"), url("../fonts/SofiaProBold.woff") format("woff"), url("../fonts/SofiaProBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 html, body {
   font-family: 'Alata', sans-serif;
   font-weight: 400;
@@ -117,7 +152,7 @@ html, body {
 }
 
 .container {
-  max-width: 1110px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -161,7 +196,7 @@ html, body {
 .menu__list-link {
   font-family: 'Sofia Pro', sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 600;
   font-size: 1.28rem;
   line-height: 1.28rem;
   color: #000;
@@ -210,14 +245,13 @@ html, body {
   background: #F9D023;
   position: relative;
   margin-top: 79px;
-  padding-right: 20px;
+  padding-right: 30px;
 }
 
 .content__button-link {
-  font-family: 'Sofia Pro',
- sans-serif;
+  font-family: 'Sofia Pro', sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0.6px;
@@ -227,8 +261,8 @@ html, body {
 
 .content__button-before {
   position: absolute;
-  top: 41%;
-  right: 17%;
+  top: 44%;
+  right: 21%;
 }
 
 .content__scroll {
@@ -273,7 +307,7 @@ html, body {
 .about-us__content-text {
   font-family: 'Sofia Pro', sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.28rem;
   line-height: 1.85rem;
   color: #0B0D21;
@@ -442,11 +476,12 @@ html, body {
   background-color: #F6D330;
   position: relative;
   margin-top: 14px;
+  padding-right: 30px;
 }
 
 .footer__form-send-link {
   font-family: 'Sofia Pro', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0.6px;
@@ -455,8 +490,8 @@ html, body {
 
 .footer__form-send-before {
   position: absolute;
-  top: 40%;
-  left: 160px;
+  top: 43%;
+  left: 147px;
 }
 
 .footer__form-answer {
@@ -510,7 +545,7 @@ html, body {
 .footer__form input,
 .footer__form input::-webkit-input-placeholder {
   font-family: 'Sofia Pro', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0.6px;
@@ -520,7 +555,7 @@ html, body {
 .footer__form input,
 .footer__form input:-ms-input-placeholder {
   font-family: 'Sofia Pro', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0.6px;
@@ -530,7 +565,7 @@ html, body {
 .footer__form input,
 .footer__form input::-ms-input-placeholder {
   font-family: 'Sofia Pro', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0.6px;
@@ -540,7 +575,7 @@ html, body {
 .footer__form input,
 .footer__form input::placeholder {
   font-family: 'Sofia Pro', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0.6px;
@@ -603,4 +638,19 @@ html, body {
           align-items: center;
   text-align: right;
   margin-right: 5px;
+}
+
+@media (max-width: 640px) {
+  .content__subtitle {
+    width: 30%;
+  }
+  .about-us__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
 }

@@ -1,27 +1,36 @@
 @import "_reset";
 @import "_fonts";
 
+$clr_1: #FFF;
+$clr_2: #000;
+$clr_3: #F6D330;
+$clr_4: #0B0D21;
+
+@mixin fontz($ff, $fw, $fs, $fz, $lh) {
+  font-family: $ff;
+  font-weight: $fw;
+  font-style: $fs;
+  font-size: $fz;
+  line-height: $lh;
+}
+
 html, body {
   font-family: 'Alata', sans-serif;
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
 }
-
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
-
 .main {
   flex: 1 0 auto;
 }
-
 .footer {
   flex: 0 0 auto;
 }
-
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -34,11 +43,47 @@ html, body {
   background-size: cover;
   -moz-background-size: cover;
   background-position: center;
+  position: relative;
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 120px;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 45%;
+  align-items: flex-end;
+  &__link {
+    @include fontz('Sofia Pro', 300, normal, 1rem, 1rem);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: $clr_1;
+    margin-top: 26px;
+  }
+  &__line {
+    display: block;
+    width: 21px;
+    height: 1px;
+    background-color: $clr_1;
+    margin-left: 5px;
+  }
+  .active-line {
+    width: 60px;
+  }
+  &__number {
+    @include fontz('Sofia Pro', 400, normal, 10px, 10px);
+    display: flex;
+    align-items: center;
+    text-align: right;
+    margin-right: 5px;
   }
 }
 
@@ -55,15 +100,11 @@ html, body {
     position: relative;
   }
   &__list-link {
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.28rem;
-    line-height: 1.28rem;
-    color: #000;
+    @include fontz('Sofia Pro', 600, normal, 1.28rem, 1.28rem);
+    color: $clr_2;
   }
   &__list-link:hover {
-    border-bottom: 1px solid #F6D330;
+    border-bottom: 1px solid $clr_3;
     padding-bottom: 6px;
   }
 }
@@ -76,15 +117,11 @@ html, body {
   &__title {
     font-size: 8.21rem;
     line-height: 9.29rem;
-    color: #fff;
+    color: $clr_1;
     text-align: center;
   }
   &__subtitle {
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 1.78rem;
-    line-height: 2.5rem;
+    @include fontz('Sofia Pro', 200, normal, 1.78rem, 2.5rem);
     color: rgba(255, 255, 255, 1);
     margin-top: 41px;
     text-align: center;
@@ -97,15 +134,15 @@ html, body {
     margin-top: 79px;
     padding-right: 30px;
   }
+  &__button:hover {
+    box-shadow: 0 0 10px 0 #141312 inset,
+    0 0 10px 1px #f0d87a;
+  }
   &__button-link {
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1rem;
+    @include fontz('Sofia Pro', 700, normal, 1rem, 1rem);
     letter-spacing: 0.6px;
     text-transform: uppercase;
-    color: #000;
+    color: $clr_2;
   }
   &__button-before {
     position: absolute;
@@ -113,14 +150,20 @@ html, body {
     right: 21%;
   }
   &__scroll {
+    @include fontz('Sofia Pro', 200, normal, 1rem, 1rem);
     padding-top: 236px;
     padding-bottom: 55px;
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 1rem;
-    line-height: 1rem;
     color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.block-about-us, .block-services {
+  position: relative;
+  .navigation__link {
+    color: $clr_2;
+  }
+  .navigation__line {
+    background-color: $clr_2;
   }
 }
 
@@ -135,7 +178,7 @@ html, body {
     display: block;
     width: 100px;
     height: 6px;
-    background: #F6D330;
+    background: $clr_3;
     margin-top: 50px;
   }
   &__content {
@@ -144,18 +187,14 @@ html, body {
     justify-content: space-between;
   }
   &__content-text {
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.28rem;
-    line-height: 1.85rem;
-    color: #0B0D21;
+    @include fontz('Sofia Pro', 400, normal, 1.28rem, 1.85rem);
+    color: $clr_4;
     width: 44%;
   }
 }
 
 .block-services {
-  background: #F6D330;
+  background: $clr_3;
 }
 .services {
   padding-top: 101px;
@@ -167,16 +206,12 @@ html, body {
     display: block;
     width: 100px;
     height: 6px;
-    background: #fff;
+    background: $clr_1;
     margin-top: 62px;
   }
   &__subtitle {
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.28rem;
-    line-height: 1.86rem;
-    color: #0B0D21;
+    @include fontz('Sofia Pro', 300, normal, 1.28rem, 1.86rem);
+    color: $clr_4;
     padding-top: 45px;
     width: 74%;
   }
@@ -198,26 +233,18 @@ html, body {
     margin-right: 0;
   }
   &__advantages-title {
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 42px;
+    @include fontz('Sofia Pro', 700, normal, 2.86rem, 3rem);
   }
   &__advantages-list {
     margin-top: 33px;
     list-style: square outside;
   }
   &__advantages-points span {
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.28rem;
-    line-height: 1.43rem;
-    color: #0B0D21;
+    @include fontz('Sofia Pro', 300, normal, 1.28rem, 1.43rem);
+    color: $clr_4;
   }
   &__advantages-points {
-    color: #FFFFFF;
+    color: $clr_1;
     font-size: 14pt;
     margin-left: 23px;
   }
@@ -228,7 +255,7 @@ html, body {
 }
 
 .footer {
-  background-color: #000;
+  background-color: $clr_2;
   padding: 101px 0 288px;
   position: relative;
   &__contact {
@@ -238,23 +265,20 @@ html, body {
     font-size: 6.43rem;
     line-height: 7.14rem;
     letter-spacing: 0px;
-    color: #fff;
+    color: $clr_1;
   }
   &__contact .line {
     display: block;
     width: 100px;
     height: 6px;
-    background-color: #F6D330;
+    background-color: $clr_3;
     margin-top: 40px;
   }
   &__contact .email-head {
-    font-family: 'Sofia Pro', sans-serif;
-    font-size: 2.86rem;
-    font-weight: 700;
-    line-height: 3rem;
+    @include fontz('Sofia Pro', 700, normal, 2.86rem, 3rem);
     letter-spacing: 0px;
     text-align: left;
-    color: #fff;
+    color: $clr_1;
     margin-top: 40px;
   }
   &__form {
@@ -275,18 +299,19 @@ html, body {
   &__form-send {
     width: 272px;
     height: 48px;
-    background-color: #F6D330;
+    background-color: $clr_3;
     position: relative;
     margin-top: 14px;
     padding-right: 30px;
   }
+  &__form-send:hover {
+    box-shadow: 0 0 10px 0 #141312 inset,
+      0 0 10px 1px #f0d87a;
+  }
   &__form-send-link {
-    font-family: 'Sofia Pro', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1rem;
+    @include fontz('Sofia Pro', 700, normal, 1rem, 1rem);
     letter-spacing: 0.6px;
-    color: #000000;
+    color: $clr_2;
   }
   &__form-send-before {
     position: absolute;
@@ -301,12 +326,8 @@ html, body {
     width: 320px;
   }
   &__form-answer .contact-text {
-    font-family: 'Sofia Pro', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.28rem;
-    line-height: 1.78rem;
-    color: #FFFFFF;
+    @include fontz('Sofia Pro', 300, normal, 1.28rem, 1.78rem);
+    color: $clr_1;
     margin-top: 50px;
     width: 364px;
   }
@@ -318,66 +339,26 @@ html, body {
 }
 .footer__contact .email-head .email,
 .footer__form-answer .contact-text .email {
-  color: #F6D330;
+  color: $clr_3;
   text-decoration: none;
-  border-bottom: 1px solid #F6D330;
+  border-bottom: 1px solid $clr_3;
+}
+.footer__contact .email-head .email:hover {
+  color: #cca90c;
 }
 .footer__form .head,
 .footer__form-answer .head {
-  font-family: 'Sofia Pro', sans-serif;
-  font-weight: bold;
-  font-size: 2.86rem;
-  line-height: 3rem;
+  @include fontz('Sofia Pro', 700, normal, 2.86rem, 3rem);
   width: 266px;
-  color: #FFFFFF;
+  color: $clr_1;
 }
 .footer__form input,
 .footer__form input::placeholder {
-  font-family: 'Sofia Pro', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1rem;
+  @include fontz('Sofia Pro', 700, normal, 1rem, 1rem);
   letter-spacing: 0.6px;
-  color: #000000;
+  color: $clr_2;
 }
-.footer__navigation {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 0;
-  top: 45%;
-  align-items: flex-end;
-}
-.footer__navigation a {
-  font-family: 'Sofia Pro', sans-serif;
-  font-size: 1rem;
-  line-height: 1rem;
-  display: flex;
-  align-items: center;
-  text-align: right;
-  text-decoration: none;
-  color: #fff;
-  margin-top: 26px;
-}
-.footer__navigation .line {
-  display: block;
-  width: 21px;
-  height: 1px;
-  background-color: #fff;
-  margin-left: 5px;
-}
-.footer__navigation .active-line {
-  width: 60px;
-}
-.footer__navigation .number {
-  font-family: 'Sofia Pro', sans-serif;
-  font-size: 10px;
-  line-height: 10px;
-  display: flex;
-  align-items: center;
-  text-align: right;
-  margin-right: 5px;
-}
+
 
 @media (max-width: 640px) {
   .content__subtitle {

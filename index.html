@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marvel</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
@@ -10,7 +11,13 @@
 <body>
 
 <div class="wrapper">
-  <header class="header">
+  <header class="header" id="header">
+    <div class="navigation">
+      <a class="navigation__link" href="#header"><span class="navigation__number">01</span>Home<span class="navigation__line active-line"></span></a>
+      <a class="navigation__link" href="#about"><span class="navigation__number">02</span><span class="navigation__line"></span></a>
+      <a class="navigation__link" href="#services"><span class="navigation__number">03</span><span class="navigation__line"></span></a>
+      <a class="navigation__link" href="#contact"><span class="navigation__number">04</span><span class="navigation__line"></span></a>
+    </div>
     <div class="container">
       <div class="header__inner">
         <a class="header__logo" href="#">
@@ -48,6 +55,12 @@
 
   <main class="main">
     <section class="block-about-us" id="about">
+      <div class="navigation">
+        <a class="navigation__link" href="#header"><span class="navigation__number">01</span><span class="navigation__line"></span></a>
+        <a class="navigation__link" href="#about"><span class="navigation__number">02</span>About<span class="navigation__line active-line"></span></a>
+        <a class="navigation__link" href="#services"><span class="navigation__number">03</span><span class="navigation__line"></span></a>
+        <a class="navigation__link" href="#contact"><span class="navigation__number">04</span><span class="navigation__line"></span></a>
+      </div>
       <div class="container">
         <div class="about-us">
           <h2 class="about-us__title">About us</h2>
@@ -74,6 +87,12 @@
     </section>
 
     <section class="block-services" id="services">
+      <div class="navigation">
+        <a class="navigation__link" href="#header"><span class="navigation__number">01</span><span class="navigation__line"></span></a>
+        <a class="navigation__link" href="#about"><span class="navigation__number">02</span><span class="navigation__line"></span></a>
+        <a class="navigation__link" href="#services"><span class="navigation__number">03</span>Services<span class="navigation__line active-line"></span></a>
+        <a class="navigation__link" href="#contact"><span class="navigation__number">04</span><span class="navigation__line"></span></a>
+      </div>
       <div class="container">
         <div class="services">
           <h2 class="services__title">Services</h2>
@@ -177,33 +196,32 @@
   </main>
 
   <footer class="footer" id="contact">
-    <div class="footer__navigation">
-            <a href=""><span class="number">01</span><span class="line"></span></a>
-            <a href=""><span class="number">02</span><span class="line"></span></a>
-            <a href=""><span class="number">03</span><span class="line"></span></a>
-            <a href="#contact"><span class="number">04</span>Contact<span class="line active-line"></span></a>
-    </div>
+    <div class="navigation">
+      <a class="navigation__link" href="#header"><span class="navigation__number">01</span><span class="navigation__line"></span></a>
+      <a class="navigation__link" href="#about"><span class="navigation__number">02</span><span class="navigation__line"></span></a>
+      <a class="navigation__link" href="#services"><span class="navigation__number">03</span><span class="navigation__line"></span></a>
+      <a class="navigation__link" href="#contact"><span class="navigation__number">04</span>Contact<span class="navigation__line active-line"></span></a>
+      </div>
         <div class="container">
             <div class="footer__contact">
-                <h2>Contact</h2>
-                <span class="line"></span>
-                <p class="email-head">Email us here:<br><a href="#" class="email">info@marvelpowergroup.com</a></p>
+              <h2>Contact</h2>
+              <span class="line"></span>
+              <p class="email-head">Email us here:<br><a href="#" class="email">info@marvelpowergroup.com</a></p>
             </div>
             <div class="footer__form">
-                <p class="head">Stay in the loop by getting on our mailing list</p>
+              <p class="head">Stay in the loop by getting on our mailing list</p>
                 <form class="form" action="">
-                    <input type="text" placeholder="NAME *">
-                    <input type="email" placeholder="E-MAIL *">
-                    <button class="footer__form-send">
-                      <a class="footer__form-send-link" href="#">SEND</a>
-                      <img class="footer__form-send-before" src="img/button_before.png" alt="#">
-                    </button>
+                  <input type="text" placeholder="NAME *">
+                  <input type="email" placeholder="E-MAIL *">
+                  <button class="footer__form-send">
+                    <a class="footer__form-send-link" href="#">SEND</a>
+                    <img class="footer__form-send-before" src="img/button_before.png" alt="#">
+                  </button>
                 </form>
             </div>
             <div class="footer__form-answer">
-                <p class="head">Thank you.<br>Your info has been successfully sent</p>
-                <p class="contact-text">Your can contact us <a href="#" class="email">info@marvelpowergroup.com</a>
-                    if you need additional assistance </p>
+              <p class="head">Thank you.<br>Your info has been successfully sent</p>
+              <p class="contact-text">Your can contact us <a href="#" class="email">info@marvelpowergroup.com</a>if you need additional assistance </p>
             </div>
         </div>
     </footer>

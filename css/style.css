@@ -176,7 +176,8 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 120px;
+  position: relative;
+  padding-top: 37px;
 }
 
 .navigation {
@@ -243,6 +244,123 @@ html, body {
 
 .logo {
   margin: 0 auto;
+}
+
+#menu__toggle {
+  opacity: 0;
+  position: absolute;
+}
+
+.hamburger-menu {
+  display: none;
+  position: relative;
+  z-index: 5;
+}
+
+.menu__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25px;
+  height: 9px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menu__btn > span,
+.menu__btn > span::before {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -4px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+}
+
+.menu__btn.active {
+  position: fixed;
+  right: 15px;
+  top: 36px;
+}
+
+.menu__btn > span.active {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: white;
+}
+
+.menu__btn > span.active::before {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-color: white;
+}
+
+.menu__box.active {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__box .menu__list-link {
+  font-family: "Sofia Pro";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.86rem;
+  line-height: 2.86rem;
+  text-align: center;
+  margin-top: 23px;
+  text-decoration: none;
+}
+
+.menu__box .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 21px 16px;
+  background-color: #000;
+}
+
+.menu__box .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  margin-top: 42px;
+}
+
+.menu__box .content__button {
+  margin: 83px 0 69px;
 }
 
 .menu__list {
@@ -382,6 +500,12 @@ html, body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.about-us__content-image {
+  margin: 0 40px 30px 0;
 }
 
 .about-us__content-text {
@@ -439,6 +563,8 @@ html, body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .services__advantages-content {
@@ -485,8 +611,7 @@ html, body {
 }
 
 .services__advantages-arrow {
-  margin-top: 41px;
-  margin-left: 26px;
+  margin: 41px 0 54px 26px;
 }
 
 .footer {
@@ -678,17 +803,145 @@ html, body {
   color: #000;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1400px) {
+  .navigation {
+    top: 15%;
+  }
+  .header .navigation {
+    top: 65%;
+  }
+}
+
+@media (max-width: 700px) {
+  .navigation {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .menu__list-link:hover {
+    border-bottom: 0;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  .contact-text {
+    width: 290px;
+  }
+  .header__inner {
+    padding-top: 20px;
+  }
+  .header__logo img {
+    width: 100px;
+  }
+  .content {
+    padding-top: 62px;
+  }
+  .content__title {
+    font-size: 3.57rem;
+    line-height: 4.28rem;
+  }
   .content__subtitle {
-    width: 30%;
+    font-size: 1rem;
+    line-height: 1.43rem;
+    margin-top: 18px;
+  }
+  .content__button {
+    margin: 44px 0 60px;
+  }
+  .content__scroll {
+    display: none;
+  }
+  .about-us {
+    padding: 53px 0;
+  }
+  .about-us__title {
+    font-size: 2.86rem;
+  }
+  .about-us .line {
+    margin-top: 34px;
+    height: 4px;
   }
   .about-us__content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    padding-top: 35px;
+  }
+  .about-us__content-text {
+    width: 100%;
+    text-align: justify;
+  }
+  .about-us__content-image {
+    margin: 0 0 30px 0;
+  }
+  .about-us__content-image img {
+    max-width: 100%;
+  }
+  .services {
+    padding: 54px 0 62px;
+  }
+  .services .text-bottom {
+    padding: 0;
+  }
+  .services__title {
+    font-size: 2.86rem;
+    line-height: 7.14rem;
+  }
+  .services .line {
+    margin-top: 35px;
+    height: 4px;
+  }
+  .services__subtitle {
+    width: 100%;
+  }
+  .services__advantages-title {
+    font-size: 1.78rem;
+    line-height: 3.51rem;
+  }
+  .services__advantages-title br {
+    display: none;
+  }
+  .footer {
+    padding: 55px 0 70px;
+  }
+  .footer__contact h2 {
+    font-size: 2.86rem;
+    line-height: 7.14rem;
+  }
+  .footer .line {
+    margin-top: 35px;
+    height: 4px;
+  }
+  .footer__contact {
+    padding-right: 0;
+  }
+  .footer__contact .email-head {
+    font-size: 1.78rem;
+    line-height: 2.14rem;
+    word-break: break-all;
+  }
+  .footer__form .form {
+    margin-top: 23px;
+  }
+  .footer__form-send {
+    width: 196px;
+  }
+  .footer__form-send-before {
+    top: 42%;
+    left: 110px;
+  }
+  .footer__form .head, .footer__form-answer .head {
+    font-size: 1.78rem;
+    line-height: 2.5rem;
+  }
+  .footer__form input, .footer__form input::-webkit-input-placeholder {
+    width: 290px;
+  }
+  .footer__form input, .footer__form input:-ms-input-placeholder {
+    width: 290px;
+  }
+  .footer__form input, .footer__form input::-ms-input-placeholder {
+    width: 290px;
+  }
+  .footer__form input, .footer__form input::placeholder {
+    width: 290px;
   }
 }

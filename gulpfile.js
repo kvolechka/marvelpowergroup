@@ -1,3 +1,4 @@
+//jshint esversion: 6
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
@@ -20,10 +21,9 @@ gulp.task('serve', function(done) {
 
     gulp.watch("sass/*.sass", gulp.series('sass'));
     gulp.watch("*.html").on('change', () => {
-      browserSync.reload();
-      done();
+    browserSync.reload();
+    done();
     });
-  
 
     done();
 });

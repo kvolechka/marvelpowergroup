@@ -581,7 +581,7 @@ html, body {
     font-size: 1.78rem;
     line-height: 2.5rem;
   }
-  .footer__form input, .footer__form input::placeholder {
+  .footer__form input, .footer__form input::placeholder, .footer__form-answer .contact-text {
   width: 290px;
 }
 }

@@ -44,6 +44,15 @@ html, body {
   -moz-background-size: cover;
   background-position: center;
   position: relative;
+  &__bgc {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #000000 4.66%, rgba(0, 0, 0, 0) 50.78%);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -61,7 +70,7 @@ html, body {
   top: 45%;
   align-items: flex-end;
   &__link {
-    @include fontz('Sofia Pro', 300, normal, 1rem, 1rem);
+    @include fontz('Sofia Pro', 400, normal, 1rem, 1rem);
     display: flex;
     align-items: center;
     text-align: center;
@@ -130,6 +139,7 @@ html, body {
   left: -100%;
   top: 0;
   width: 100%;
+  height: 100%;
   margin: 0;
   list-style: none;
   text-align: center;
@@ -185,7 +195,7 @@ html, body {
     position: relative;
   }
   &__list-link {
-    @include fontz('Sofia Pro', 600, normal, 1.28rem, 1.28rem);
+    @include fontz('Sofia Pro', 400, normal, 1.28rem, 1.28rem);
     color: $clr_2;
   }
   &__list-link:hover {
@@ -199,6 +209,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   &__title {
     font-size: 8.21rem;
     line-height: 9.29rem;
@@ -280,6 +291,12 @@ html, body {
     color: $clr_4;
     width: 44%;
   }
+  &__content-text-indent {
+    padding-bottom: 40px;
+  }
+  &__content-text-indent:last-child {
+    padding-bottom: 0;
+  }
 }
 
 .block-services {
@@ -312,7 +329,6 @@ html, body {
     padding-top: 47px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
   }
   &__advantages-content {
     display: flex;
@@ -337,6 +353,7 @@ html, body {
     color: $clr_1;
     font-size: 14pt;
     margin-left: 23px;
+    margin-top: 18px;
   }
   &__advantages-arrow {
     margin: 41px 0 54px 26px;
@@ -395,7 +412,7 @@ html, body {
   }
   &__form-send:hover {
     box-shadow: 0 0 10px 0 #141312 inset,
-      0 0 10px 1px #f0d87a;
+      0 0 7px 1px #f0d87a;
   }
   &__form-send-link {
     @include fontz('Sofia Pro', 700, normal, 1rem, 1rem);
@@ -455,6 +472,25 @@ html, body {
   }
   .header .navigation {
     top: 65%;
+  }
+}
+
+@media (max-width: 971px) {
+  .about-us {
+    &__content-text {
+      width: 100%;
+      text-align: justify;
+    }
+    &__content-image {
+      margin: 0 0 30px 0;
+      width: 100%;
+    }
+    &__content-image img {
+      max-width: 100%;
+    }
+  }
+  .services__advantages {
+    flex-direction: column;
   }
 }
 
@@ -543,9 +579,6 @@ html, body {
     &__advantages-title {
       font-size: 1.78rem;
       line-height: 3.51rem;
-    }
-    &__advantages-title br {
-      display: none;
     }
   }
   .footer {
